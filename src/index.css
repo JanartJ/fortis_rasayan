@@ -1,0 +1,170 @@
+/* Custom Global CSS for Fortis Rasayan */
+:root {
+  --primary-blue: #0B3C7D;
+  --primary-dark: #062551;
+  --primary-light: #1A5CB0;
+  --secondary-slate: #5A6578;
+  --secondary-light: #8E99A8;
+  --accent-cyan: #0284C7;
+  --accent-soft: #E0F2FE;
+  --bg-light: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --border-light: rgba(11, 60, 125, 0.1);
+  --shadow-subtle: 0 4px 20px -2px rgba(11, 60, 125, 0.06);
+  --shadow-card: 0 10px 30px -5px rgba(11, 60, 125, 0.08);
+  --shadow-hover: 0 20px 40px -10px rgba(11, 60, 125, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-light);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EDF2F7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A0AEC0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-blue);
+}
+
+/* Subtle background pattern inspired by chemical lattices */
+.chemical-pattern-bg {
+  background-color: #F8FAFC;
+  background-image: radial-gradient(rgba(11, 60, 125, 0.07) 1px, transparent 1px), radial-gradient(rgba(11, 60, 125, 0.04) 1px, #F8FAFC 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #062551 0%, #0B3C7D 50%, #154D9B 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.25) 0%, rgba(2, 132, 199, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-gradient::after {
+  content: "";
+  position: absolute;
+  bottom: -40%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(142, 153, 168, 0.15) 0%, rgba(142, 153, 168, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Card hover animation */
+.card-hover-effect {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.dark-glass-panel {
+  background: rgba(6, 37, 81, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hexagon decorative icon container */
+.hex-badge {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animation keyframes */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 4s ease-in-out infinite;
+}
+
+/* Button pulse on hero */
+.btn-primary-glow {
+  box-shadow: 0 4px 14px 0 rgba(11, 60, 125, 0.39);
+  transition: all 0.3s ease;
+}
+
+.btn-primary-glow:hover {
+  box-shadow: 0 6px 20px rgba(11, 60, 125, 0.6);
+  transform: translateY(-2px);
+}
